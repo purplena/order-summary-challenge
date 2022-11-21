@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir dist
           chmod 777 dist
-      - name: Build with vite
+      - name: Build with vite 
         run: npm run build
       - name: Setup tmate session
         if: ${{ failure() }}
