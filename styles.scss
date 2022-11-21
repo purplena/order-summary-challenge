@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Global styles & variables
+$ff-primary: "Roboto", sans-serif;
+$drop-shadow: 0 15px 20px rgba(105, 80, 168, 0.3);
+$transition: all 0.3s linear;
+$white: #fff;
+$dark-grey: #14214d;
+$grey-div: #f8f8ff;
+$grey-text: #767d99;
+$blue-button: #382ae1;
+$blue-button-hover: #766cf1;
+$link-color: #3620da;
+$link-hover: #9188f3;
+
+section {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./images/pattern-background-mobile.svg),
+    linear-gradient(rgba(223, 231, 254, 1), rgba(223, 231, 254, 1));
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: $ff-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background: $white;
+  border-radius: 20px;
+
+  .hero-image {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: block;
+    width: 100%;
+  }
+}
+
+.card-content {
+  text-align: center;
+
+  h2 {
+    text-transform: capitalize;
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: $dark-grey;
+  }
+
+  .summary-text {
+    color: $grey-text;
+    width: 70%;
+    margin: 0 auto 2rem auto;
+    line-height: 1.5;
+  }
+
+  .button {
+    display: block;
+    margin: 0 2rem 1.5rem 2rem;
+    text-decoration: none;
+  }
+
+  .button-payment {
+    background: $blue-button;
+    color: $white;
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: $drop-shadow;
+    transition: $transition;
+
+    &:active {
+      background: $blue-button-hover;
+    }
+  }
+
+  .button-cancel {
+    color: $grey-text;
+    font-weight: 700;
+    padding-bottom: 0.75rem;
+
+    &:active {
+      color: $dark-grey;
+    }
+  }
+}
+
+.annual-plan-info {
+  display: flex;
+  margin: 0 2rem 2rem 2rem;
+  background: $grey-div;
+  border-radius: 7px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+
+    .p1 {
+      font-weight: 700;
+      color: $dark-grey;
+      margin-bottom: 0.25rem;
+    }
+
+    .p2 {
+      color: $grey-text;
+      font-size: 0.95rem;
+    }
+  }
+
+  .change-link {
+    color: $link-color;
+    font-weight: 700;
+    cursor: pointer;
+    transition: $transition;
+
+    &:active {
+      color: $link-hover;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    background-image: url(./images/pattern-background-desktop.svg),
+      linear-gradient(rgba(223, 231, 254, 1), rgba(223, 231, 254, 1));
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .card {
+    max-width: 400px;
+  }
+}
