@@ -3,6 +3,7 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
+  workflow_dispatch:
   push:
     branches: ["main"]
 
@@ -36,10 +37,13 @@ jobs:
         run: npm install
       - name: Create dist directory with permissions
         run: |
-          makedir dist
+          mkdir dist
           chmod 777 dist
       - name: Build with vite
         run: npm run build
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
